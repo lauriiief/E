@@ -1,5 +1,9 @@
 
-//function nicknameMap(persons) {}
+function nicknameMap(persons) {
+  let listArrays = persons.map((el) => Object.values(el));
+  let ArraystoSrting = listArrays.map(el => el.join(" "));
+  return ArraystoSrting;
+}
 
 
 const persons = [
@@ -15,6 +19,7 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-//const nicknames = nicknameMap(persons);
-//console.log(persons);
-//console.log(nicknames);
+const nicknames = nicknameMap(persons);
+console.log(persons);
+console.log(nicknames);
+
