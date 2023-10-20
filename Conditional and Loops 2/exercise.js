@@ -1,7 +1,7 @@
 
 function nicknameMap(persons) {
   let listArrays = persons.map((el) => Object.values(el));
-  let ArraystoSrting = listArrays.map(el => el.join(" "));
+  let ArraystoSrting = listArrays.map(el => el.join(" - "));
   return ArraystoSrting;
 }
 
