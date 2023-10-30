@@ -18,13 +18,13 @@ class Circle {
 }
   
 class AreaCalculator {
-  static calculate(Square, Rectangle, Circle) {
-    if(Square){
-      return Square.side * Square.side;
-    } else if(Rectangle){
-      return Number(Rectangle.height * Rectangle.width);
-    } else if(Circle){
-      return Number(Circle.radius * 3.14);
+  static calculate(value) {
+    if(value instanceof Square){
+      return value.side * value.side;
+    } else if(value instanceof Rectangle){
+      return value.height * value.width;
+    } else if(value instanceof Circle){
+      return value.radius * 3.14;
     } else{
       return "Class not recognized"
     }

@@ -1,5 +1,8 @@
 function uncompletedNotes(notes) {
-  //...
+  notes.forEach((element) => {
+    const filtertodos = element.todos.filter((todo) => !todo.done); // signo exclamacion contrario
+    console.log(filtertodos);
+  });
 }
 
 const notes = [
