@@ -1,53 +1,40 @@
-class Allshapes {
-
-}
-
-
-class Square extends Allshapes{
+class Square {
   constructor(side) {
-    super()
     this.side = side;
   }
 }
-
-class Rectangle extends Allshapes{
+  
+class Rectangle {
   constructor(width, height) {
-    super()
     this.width = width;
     this.height = height;
   }
 }
-
-class Circle extends Allshapes{
+  
+class Circle {
   constructor(radius) {
-    super()
     this.radius = radius;
   }
 }
-
-class AreaCalculator extends Allshapes{
-  static calculate(value) {
-    if(value === Circle.class) {
-      return 3.14 * (Circle.radius * Circle.radius);
-    } else if(Square.class) {
+  
+class AreaCalculator {
+  static calculate(Square, Rectangle, Circle) {
+    if(Square){
       return Square.side * Square.side;
-    } else if(Rectangle.class){
-      return Rectangle.width * Rectangle.height;
-    } else {
-      return "The class is not recognized";
+    } else if(Rectangle){
+      return Number(Rectangle.height * Rectangle.width);
+    } else if(Circle){
+      return Number(Circle.radius * 3.14);
+    } else{
+      return "Class not recognized"
     }
 }
 }
-
-const square = new Square(4);
-const rectangle = new Rectangle(4, 2);
-const circle = new Circle(5);
-
-console.log(square instanceof Allshapes)
-console.log(rectangle instanceof Allshapes)
-console.log(circle instanceof Allshapes)
-
-
-console.log(AreaCalculator.calculate(square));
-console.log(AreaCalculator.calculate(rectangle));
-console.log(AreaCalculator.calculate(circle));
+  
+  const square = new Square(4);
+  const rectangle = new Rectangle(4, 2);
+  const circle = new Circle(5);
+  
+  console.log(AreaCalculator.calculate(square));
+  console.log(AreaCalculator.calculate(rectangle));
+  console.log(AreaCalculator.calculate(circle));
