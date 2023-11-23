@@ -1,9 +1,23 @@
 <html>
   <body>
-    <div id="container" style="display: flex; align-items: center;"></div>
+    <div id="container" style="display: flex; align-items: center;">
+      <ul class="todo-list"></ul>
+    </div>
   </body>
 </html>
 
 <script>
   // code here
+  let todoList = document.querySelector(".todo-list");
+
+  fetch("https://jsonplaceholder.typicode.com/todos") 
+        .then((res) => res.json()) 
+        .then((val) => {
+          val.forEach((todo) => {
+            let liElement = document.createElement('li'); // creamos el elemento <li>
+            liElement.textContent = todo.title; // ponemos el titulo del todo en el <li> tag
+            todoList.appendChild(liElement); // añadimos el elemento <li> dentro del <ul>
+          })
+        }) 
+        .catch((err) => console.log(err))
 </script>
