@@ -21,4 +21,11 @@
 
 <script>
   // code here
+  let labels = document.querySelectorAll("label");
+  let values = document.querySelectorAll(".form-input");
+  console.log(
+    `${labels[0].textContent} ${values[0].value}
+     ${labels[1].textContent} ${values[1].value}
+     ${labels[2].textContent} ${values[2].value}`
+  );
 </script>
